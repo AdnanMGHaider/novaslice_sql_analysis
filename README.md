@@ -102,6 +102,11 @@ The full ERD diagram is stored in:
 
 `erd/erd.png`
 
+<p align="center">
+  <img src="erd/novaslice_erd.png" width="600">
+</p>
+
+
 ## 5. Business Questions Answered
 
 This project answers twenty real business questions across operations, finance, marketing, product strategy, and customer analytics.  
