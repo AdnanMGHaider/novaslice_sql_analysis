@@ -223,7 +223,39 @@ All screenshots are available in the folder: `screenshots/`
 </p>
 
 ## 9. How to Run This Project
-[placeholder]
+
+To reproduce the full analysis on your own machine, follow the steps below.
+
+### 1. Clone the Repository
+Clone the project to your local machine:
+git clone https://github.com/<your-user>/novaslice_sql_analysis.git
+
+### 2. Open Microsoft SQL Server
+Ensure that SQL Server and SQL Server Management Studio (SSMS) are installed.
+
+### 3. Create the Database (optional)
+CREATE DATABASE novaslice;
+USE novaslice;
+
+### 4. Run the Schema Script
+Open `schemas/schema.sql` and run the full script to create all five tables and their relationships.
+
+### 5. Import the CSV Data
+Use SSMS  
+Tasks → Import Flat File  
+and import all files from the `data/` folder into their matching tables:
+customers  
+orders  
+order_details  
+pizzas  
+pizza_types
+
+### 6. Run the Analysis Script
+Open `sql/sql_analysis.sql` and run each section individually.  
+Each section corresponds to one business question.
+
+### 7. View Outputs
+All expected outputs are available in the `screenshots/` folder for cross checking.
 
 ## 10. Caveats and Data Quality Notes
 [placeholder]
