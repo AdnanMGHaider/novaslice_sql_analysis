@@ -165,7 +165,33 @@ Selected outputs (such as revenue trends, customer behavior, and product perform
 This workflow mirrors the structure of real analytics projects where schema creation, cleaning, exploration, and insights follow a repeatable pipeline.
 
 ## 7. Key Insights
-[placeholder]
+
+## 7. Key Insights
+
+This analysis highlights important trends across customer behavior, product performance, and financial outcomes. The insights below summarize what a business stakeholder would take away from the results of the queries.
+
+### Operational Performance
+Orders showed a consistent upward trend across months, indicating stable growth.  
+Weekends accounted for noticeably higher order volumes compared to weekdays.  
+Peak ordering hours were concentrated in the evening period, which has staffing and inventory implications.
+
+### Product and Menu Performance
+Classic and Supreme style pizzas contributed the highest unit sales across categories.  
+Medium and large sized pizzas dominated most customer orders, while XXL sizes contributed very little volume.  
+A small subset of pizza types contributed a disproportionately high share of both units sold and revenue.
+
+### Revenue Insights
+Revenue grew steadily month over month in cumulative form.  
+The top three pizzas contributed a large share of total revenue, confirming a highly skewed revenue distribution.  
+Certain categories consistently generated higher revenue per unit, signaling strong pricing power.
+
+### Customer Insights
+A minority of customers placed multiple orders and contributed significantly to total revenue.  
+High value customers were identifiable through total spend, enabling future loyalty or retention campaigns.  
+The repeat customer rate indicated a measurable opportunity for improving retention and customer lifetime value.
+
+These insights demonstrate how SQL analysis can directly support marketing, product, operations, and finance functions in a food ordering business.
+
 
 ## 8. Screenshots of Outputs
 [placeholder]
