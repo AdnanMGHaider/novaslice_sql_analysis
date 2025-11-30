@@ -7,34 +7,20 @@
 ## 1. Project Overview
 
 NovaSlice Pizza is a fictional pizza chain operating across major Indian cities.  
-This project delivers a complete SQL based analysis of one full cycle of transactional order data.  
-The goal is to recreate the type of analytics work performed inside a real food delivery or quick service restaurant environment.
+This project delivers a full SQL based analysis of its transactional order data, simulating the type of analytics work carried out inside real food delivery or quick service restaurant operations.
 
-The project covers the complete workflow  
-from data loading and schema creation  
-to business question framing, stakeholder oriented queries,  
-and a full breakdown of revenue, product mix, customer behaviour,  
-and operational trends.
+It includes schema creation, data loading, and a structured set of stakeholder driven business questions, followed by revenue, product mix, customer behaviour, and operational insights.
 
-This analysis demonstrates core skills expected from an entry level data analyst  
-including relational modelling, window functions, aggregation techniques,  
-time based analysis, customer segmentation, and structured project presentation.
+The analysis demonstrates skills expected from an entry level data analyst including relational modelling, window functions, aggregation techniques, time based analysis, customer segmentation, and clear project documentation.
 
 ## 2. Business Context
 
 NovaSlice Pizza operates a network of delivery focused outlets across multiple Indian cities.  
-Management wants to better understand order behaviour, revenue drivers, customer patterns,  
-and category level performance in order to support decisions related to menu strategy,  
-staffing, marketing, pricing, and supply chain planning.
+Management wants to better understand order behaviour, revenue drivers, customer patterns, and category level performance in order to support decisions related to menu strategy, staffing, marketing, pricing, and supply chain planning.
 
-This analysis simulates a real internal analytics request where different stakeholders  
-Operations, Finance, Marketing, Product, Customer Insights, and the Board  
-ask specific questions about business performance.
+This analysis simulates a real internal analytics request where different stakeholders such as Operations, Finance, Marketing, Product, Customer Insights, and the Board ask specific questions about business performance.
 
-All twenty SQL queries in this project are aligned with real business needs  
-such as understanding order volume trends, identifying top selling pizzas,  
-measuring customer loyalty, quantifying revenue contribution,  
-and determining peak ordering periods.
+All twenty SQL queries in this project are aligned with real business needs such as understanding order volume trends, identifying top selling pizzas, measuring customer loyalty, quantifying revenue contribution, and determining peak ordering periods.
 
 
 ## 3. Dataset Structure
@@ -61,7 +47,6 @@ Descriptive attributes such as pizza category and ingredients.
 
 The schema for these tables is defined in `schemas/schema.sql`.
 
-
 ## 4. Entity Relationship Diagram
 
 The NovaSlice database follows a clean relational structure with five core tables.  
@@ -77,30 +62,30 @@ The ERD captures how customer information, orders, pizzas, and order line items 
 ### Relationship Details
 
 **customers → orders**  
-One to many  
-Each customer may have multiple orders, but each order belongs to a single customer.  
-Key: customers.custid → orders.custid
+- Relationship type: One to many  
+- Each customer may have multiple orders, but each order belongs to a single customer.  
+- Key: customers.custid → orders.custid
 
 **orders → order_details**  
-One to many  
-Each order can contain multiple pizza line items.  
-Key: orders.order_id → order_details.order_id
+- Relationship type: One to many  
+- Each order can contain multiple pizza line items.  
+- Key: orders.order_id → order_details.order_id
 
 **pizzas → order_details**  
-One to many  
-Each pizza can appear across many orders.  
-Key: pizzas.pizza_id → order_details.pizza_id
+- Relationship type: One to many  
+- Each pizza can appear across many orders.  
+- Key: pizzas.pizza_id → order_details.pizza_id
 
 **pizza_types → pizzas**  
-One to many  
-A pizza type defines category and ingredients for multiple pizzas.  
-Key: pizza_types.pizza_type_id → pizzas.pizza_type_id
+- Relationship type: One to many  
+- A pizza type defines category and ingredients for multiple pizzas.  
+- Key: pizza_types.pizza_type_id → pizzas.pizza_type_id
 
 ### ERD File
 
-The full ERD diagram is stored in:
+The full ERD diagram is stored at:
 
-`erd/erd.png`
+`erd/novaslice_erd.png`
 
 <p align="center">
   <img src="erd/novaslice_erd.png" width="600">
@@ -109,39 +94,40 @@ The full ERD diagram is stored in:
 
 ## 5. Business Questions Answered
 
-This project answers twenty real business questions across operations, finance, marketing, product strategy, and customer analytics.  
-Each question is mapped to a corresponding SQL section in `sql/sql_analysis.sql`.
+This project answers a set of real business questions across operations, finance, marketing, product strategy, and customer analytics.  
+Each question maps to one or more SQL sections in `sql/sql_analysis.sql`.
 
-### Orders and Operational Insights
-1. How many unique orders have been placed so far  
-2. How order volume changes month over month  
-3. Which days have the highest or lowest ordering activity  
-4. Whether weekends or weekdays drive more orders  
-5. Average number of orders per customer  
-6. Which customers are the top repeat buyers  
-7. How order growth is trending over time
+### Orders and operational insights  
 
-### Revenue and Financial Insights
-8. Total revenue generated from all pizzas sold  
-9. Top three pizzas generating the highest revenue  
-10. Revenue contribution of each pizza as a percentage of total sales  
-11. Cumulative revenue growth over time  
-12. Revenue contribution by pizza size
+1. How many unique orders have been placed and how does order volume change month over month  
+2. Which days and times of day have the highest or lowest ordering activity and how weekends compare to weekdays  
+3. What is the average number of orders per customer and who are the key repeat customers driving volume  
+4. How large a typical order is in terms of pizzas per order  
+5. How many pizzas are ordered per day on average and how this pattern changes across months  
 
-### Product and Menu Insights
-13. Highest priced pizza and its attributes  
-14. Most commonly ordered pizza size  
-15. Top five pizza types by total units sold  
-16. Quantity sold by category  
-17. Top three pizzas within each category by revenue  
-18. Category wise distribution of units sold
+### Revenue and financial insights  
 
-### Customer and Marketing Insights
-19. Top ten customers by total spend  
-20. Customer segmentation by value group (high value vs regular)  
-21. Repeat customer rate and loyalty behavior  
-22. Average pizzas ordered per day  
-23. Seasonal ordering trends across months
+6. What the total revenue generated from all pizzas sold is  
+7. Which pizzas generate the most revenue overall  
+8. What percentage of total revenue each pizza contributes  
+9. How cumulative revenue has grown over time  
+10. How much revenue each pizza size contributes  
+
+### Product and menu insights  
+
+11. Which pizza is priced the highest and what its attributes are  
+12. Which pizza size is ordered most often  
+13. Which five pizza types sell the most units  
+14. How many units are sold in each category and which categories dominate sales  
+15. Within each category which three pizzas generate the most revenue  
+
+### Customer and marketing insights  
+
+16. Which customers spend the most overall and how their behaviour compares to others  
+17. How customers segment into high value and regular groups based on total spend  
+18. What proportion of customers are repeat customers versus one time buyers and what the repeat rate is  
+19. How ordering patterns differ between weekdays and weekends from a marketing perspective  
+20. How these patterns can inform loyalty, retention, and campaign planning  
 
 These questions form the analytical backbone of the NovaSlice Pizza project and align with real world business needs for a food delivery or restaurant chain.
 
@@ -205,7 +191,7 @@ All SQL query results for the twenty business questions have been captured as PN
 They are stored inside the `screenshots` folder in this repository.
 
 Each file name follows a clear naming convention that matches the section numbers in the SQL script  
-(for example: `section_1_1_total_unique_orders.png`, `section_5_top_5_pizza_types.png`, etc.)
+(for example: `section01_1_1_total_unique_orders.png`, `section05_top5_pizza_types.png`, etc.)
 
 Below is a small preview of selected SQL query outputs.  
 All screenshots are available in the folder: `screenshots/`
@@ -242,8 +228,7 @@ Open `schemas/schema.sql` and run the full script to create all five tables and 
 
 ### 5. Import the CSV Data
 Use SSMS  
-Tasks → Import Flat File  
-and import all files from the `data/` folder into their matching tables:
+Tasks → Import Flat File and import all files from the `data/` folder into their matching tables:
 customers  
 orders  
 order_details  
@@ -274,12 +259,12 @@ These caveats are important to acknowledge when presenting the project to recrui
 
 This repository is organized into the following folders:
 
-• data/ — raw CSV files  
-• schemas/ — database schema creation script  
-• sql/ — main SQL analysis script  
-• screenshots/ — images of query results and logo  
-• erd/ — entity relationship diagram  
-• caveats/ — optional file for storing notes on limitations
+• data/: raw CSV files  
+• schemas/: database schema creation script  
+• sql/: main SQL analysis script  
+• screenshots/: images of query results and logo  
+• erd/: entity relationship diagram  
+• caveats/: optional file for storing notes on limitations
 
 Each file contributes to a complete, reproducible SQL analysis workflow.
 
