@@ -34,7 +34,29 @@ and determining peak ordering periods.
 
 
 ## 3. Dataset Structure
-[placeholder]
+
+The project uses five CSV files that represent the core transactional data for NovaSlice Pizza.  
+These files were imported into SQL Server and modelled into a clean relational structure.
+
+### Tables
+
+**customers**  
+Customer level information including name, contact details, city, and postal code.
+
+**orders**  
+One record per order placed by a customer. Contains order date, time, status, and customer reference.
+
+**order_details**  
+Line level detail for each order. Contains one row per pizza sold along with quantity.
+
+**pizzas**  
+Menu level information for each pizza including size and price.
+
+**pizza_types**  
+Descriptive attributes such as pizza category and ingredients.
+
+The schema for these tables is defined in `schemas/schema.sql`.
+
 
 ## 4. Entity Relationship Diagram
 [placeholder]
