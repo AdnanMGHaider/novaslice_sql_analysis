@@ -100,7 +100,44 @@ The full ERD diagram is stored in:
 
 
 ## 5. Business Questions Answered
-[placeholder]
+
+## 5. Business Questions Answered
+
+This project answers twenty real business questions across operations, finance, marketing, product strategy, and customer analytics.  
+Each question is mapped to a corresponding SQL section in `sql/sql_analysis.sql`.
+
+### Orders and Operational Insights
+1. How many unique orders have been placed so far  
+2. How order volume changes month over month  
+3. Which days have the highest or lowest ordering activity  
+4. Whether weekends or weekdays drive more orders  
+5. Average number of orders per customer  
+6. Which customers are the top repeat buyers  
+7. How order growth is trending over time
+
+### Revenue and Financial Insights
+8. Total revenue generated from all pizzas sold  
+9. Top three pizzas generating the highest revenue  
+10. Revenue contribution of each pizza as a percentage of total sales  
+11. Cumulative revenue growth over time  
+12. Revenue contribution by pizza size
+
+### Product and Menu Insights
+13. Highest priced pizza and its attributes  
+14. Most commonly ordered pizza size  
+15. Top five pizza types by total units sold  
+16. Quantity sold by category  
+17. Top three pizzas within each category by revenue  
+18. Category wise distribution of units sold
+
+### Customer and Marketing Insights
+19. Top ten customers by total spend  
+20. Customer segmentation by value group (high value vs regular)  
+21. Repeat customer rate and loyalty behavior  
+22. Average pizzas ordered per day  
+23. Seasonal ordering trends across months
+
+These questions form the analytical backbone of the NovaSlice Pizza project and align with real world business needs for a food delivery or restaurant chain.
 
 ## 6. SQL Approach
 [placeholder]
