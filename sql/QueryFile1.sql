@@ -47,9 +47,12 @@ Analysis and Reporting
 ----------------------
 */
 
-/*
-1. Orders Volume Analysis Queries
 
+/* ---------------------------------------
+   Section 1: Orders Volume Analysis
+---------------------------------------- */
+
+/*
 Stakeholder: Operations Manager
 
 "We are trying to understand our order volume in detail so we can measure store performance and benchmark growth.
@@ -65,13 +68,14 @@ Instead of just knowing the total number of unique orders, I'd like a deeper bre
 
 Analyst Tasks:
 1.1: Count the total number of unique orders (COUNT(DISTINCT order_id)).
-1.2: Break down orders by month (GROUP BY EXTRACT(MONTH FROM order_date)).
-     Use window functions to calculate month-over-month growth % (LAG(order_count) OVER ...).
-1.3: Find day-wise order distribution (TO_CHAR(order_date, 'Day')).
-1.4: Classify each day as weekday or weekend and compare total orders by that classification
-1.5: Compute average orders per customer (COUNT(order_id)/COUNT(DISTINCT custId)).
-1.6: Identify repeat customers and their order frequency (HAVING COUNT(order_id) > 1).
-1.7: Build a trend projection using cumulative counts or forecasting methods.
+1.2: Break down orders by year and month using YEAR(order_date) and MONTH(order_date), 
+     and calculate month over month growth percentage using LAG(order_count) OVER(ORDER BY month_start)
+1.3: Find day wise order distribution using DATENAME(weekday, order_date)
+1.4: Classify each day as weekday or weekend using a CASE expression on DATENAME(weekday, order_date)
+     and compare total orders by that classification
+1.5: Compute average orders per customer as COUNT(DISTINCT order_id) divided by COUNT(DISTINCT custid)
+1.6: Identify repeat customers and their order frequency using GROUP BY custid and HAVING COUNT(DISTINCT order_id) greater than one
+1.7: Build a trend projection using cumulative counts of orders with SUM(order_count) OVER(ORDER BY month_start)
 
 */
 
@@ -211,13 +215,18 @@ FROM monthly_with_windows
 ORDER BY month_start;
 
 
+
+/* ---------------------------------------
+   Section 2: Total Revenue from Pizza Sales
+---------------------------------------- */
+
 /*
-2. Total Revenue from Pizza Sales
 
 Stakeholder: Finance Team
 
-"We need to report monthly revenue to management. Can you calculate the total revenue generated from all pizza sales,
-considering price * quantity from each other?"
+"We need the total revenue generated from all pizza sales so far. 
+Please calculate overall revenue by multiplying price and quantity for every pizza sold 
+across all orders."
 
 Analyst Tasks:
 2.0: Join order_details with pizzas and sum (price * quantity).
@@ -230,9 +239,12 @@ FROM order_details AS od
 JOIN pizzas AS p
     ON od.pizza_id = p.pizza_id;
 
-/*
-3. Highest-Priced Pizza
 
+/* ---------------------------------------
+   Section 3: Highest-Priced Pizza
+---------------------------------------- */
+
+/*
 Stakeholder: Menu Manager
 
 "Our premium pizzas must be correctly priced. Can you find out which pizza has the 
@@ -254,9 +266,12 @@ JOIN pizza_types AS pt
     ON p.pizza_type_id = pt.pizza_type_id
 WHERE p.price = (SELECT MAX(price) FROM pizzas);
 
-/*
-4. Most Common Pizza Size Ordered
 
+/* ---------------------------------------
+   Section 4: Most Common Pizza Size Ordered
+---------------------------------------- */
+
+/*
 Stakeholder: Logistics Manager
 
 "To optimize packaging and raw materials supply. I need to know which pizza size (S, M, L, XL, XXL) is ordered the most."
@@ -275,9 +290,11 @@ JOIN pizzas AS p
 GROUP BY p.size
 ORDER BY total_orders DESC;
 
-/*
-5. Top 5 Most Ordered Pizza Types
+/* ---------------------------------------
+   Section 5: Top 5 Pizza Types by Units Sold
+---------------------------------------- */
 
+/*
 Stakeholder: Product Head
 
 "We want to promote our top-selling pizzas. Can you provide the top 5 pizza types ordered by quantity, along with the exact number
@@ -302,9 +319,11 @@ ORDER BY
     total_quantity_ordered DESC;
 
 
-/*
-6. Total Quantity by Pizza Category
+/* ---------------------------------------
+   Section 6: Total Quantity by Pizza Category
+---------------------------------------- */
 
+/*
 Stakeholder: Marketing Manager
 
 "We run promotions based on categories (Classic, Veggie, Supreme, Chicken, etc.).
@@ -326,9 +345,12 @@ JOIN pizza_types AS pt
 GROUP BY pt.category
 ORDER BY total_qty DESC;
 
-/*
-7. Orders by hour of the day
 
+/* ---------------------------------------
+   Section 7: Orders by Hour of Day
+---------------------------------------- */
+
+/*
 Stakeholder: Operations Head
 
 "When are customers ordering the most? Do they prefer lunch (12-2 PM),
@@ -348,9 +370,12 @@ FROM orders
 GROUP BY DATEPART(HOUR, CAST(order_time AS time))
 ORDER BY DATEPART(HOUR, CAST(order_time AS time));
 
-/*
-8. Cateogry wise pizza distribution
 
+/* ---------------------------------------
+   Section 8: Category-wise Pizza Distribution
+---------------------------------------- */
+
+/*
 Stakeholder: Product strategy team
 
 "Which categories (like Veggie, Chicken, Supreme) dominate our menu sales? Can you prepare a breakdown of orders
@@ -377,9 +402,12 @@ JOIN pizza_types AS pt
 GROUP BY pt.category
 ORDER BY total_units_sold DESC;
 
-/*
-9. Average Pizzas Ordered per day
 
+/* ---------------------------------------
+   Section 9: Average Pizzas Ordered per Day
+---------------------------------------- */
+
+/*
 Stakeholder: CEO
 
 "I want to see if our daily demand is consistent.
@@ -401,9 +429,12 @@ FROM (
     GROUP BY o.order_date
 ) t;
 
-/*
-10. Top 3 Pizzas by Revenue
 
+/* ---------------------------------------
+   Section 10: Top 3 Pizzas by Revenue
+---------------------------------------- */
+
+/*
 Stakeholder: Finance Team
 
 "We need to know which pizzas are our biggest revenue drivers. Please provide the top 3 pizzas by revenue generated."
@@ -429,10 +460,11 @@ SELECT
 FROM pizza_revenue
 WHERE rank <= 3;
 
+/* ---------------------------------------
+   Section 11: Revenue Contribution per Pizza
+---------------------------------------- */
 
 /*
-11. Revenue Contribution per Pizza
-
 Stakeholder: CFO
 
 "For our revenue mix analysis, I need to know what percentage of total revenue each pizza contributes.
@@ -470,9 +502,11 @@ ORDER BY
     ) DESC;
 
 
-/*
-12. Cumulative Revenue Over Time
+/* ---------------------------------------
+   Section 12: Cumulative Revenue Over Time
+---------------------------------------- */
 
+/*
 Stakeholder: Board of Directors
 
 "We want to see how our cumulative revenue has grown month by month since launch.
@@ -500,9 +534,11 @@ FROM (
         o.order_date
 ) AS t;
 
-/*
-13. Top 3 pizzas by category (revenue-based)
+/* ---------------------------------------
+   Section 13: Top 3 Pizzas by Category (Revenue-based)
+---------------------------------------- */
 
+/*
 Stakeholder: Product Head
 
 "Within each pizza category, which 3 pizzas bring the most revenue?
@@ -539,9 +575,12 @@ SELECT
 FROM cat_rank
 WHERE rnk <= 3;
 
-/*
-14. Top 10 Customers by Spending
 
+/* ---------------------------------------
+   Section 14: Top 10 Customers by Spending
+---------------------------------------- */
+
+/*
 Stakeholder: Customer Retention Manager
 
 "Who are our top 10 customers based on total spend? 
@@ -569,9 +608,11 @@ GROUP BY
 ORDER BY
     total_spent DESC;
 
-/*
-15. Orders by Weekday
+/* ---------------------------------------
+   Section 15: Orders by Weekday
+---------------------------------------- */
 
+/*
 Stakeholder: Marketing Team
 
 "Which days of the week are busiest for orders?
@@ -606,9 +647,12 @@ GROUP BY
 ORDER BY
     total_orders DESC;
 
-/*
-16. Average Order Size
 
+/* ---------------------------------------
+   Section 16: Average Order Size
+---------------------------------------- */
+
+/*
 Stakeholder: Supply Chain Manager
 
 "What's the average number of pizzas per order?
@@ -628,10 +672,11 @@ FROM (
         od.order_id
 ) AS t;
 
+/* ---------------------------------------
+   Section 17: Seasonal Trends
+---------------------------------------- */
 
 /*
-17. Seasonal Trends
-
 Stakeholder: Operations Manager
 
 "Do we see peak sales in certain months or holidays? 
@@ -649,9 +694,11 @@ GROUP BY
 ORDER BY
     MIN(order_date);
 
-/*
-18. Revenue by pizza size
+/* ---------------------------------------
+   Section 18: Revenue by Pizza Size
+---------------------------------------- */
 
+/*
 Stakeholder: Finance head
 
 "What is the revenue contribution of each pizza size (S, M, L, XL, XXL)?"
@@ -670,9 +717,11 @@ ORDER BY
     revenue DESC;
 
 
-/*
-19. Customer Segmentation
+/* ---------------------------------------
+   Section 19: Customer Segmentation
+---------------------------------------- */
 
+/*
 Stakeholder: Customer Insights Team
 
 "Do our high-value customers prefer premium pizzas or regular pizzas? We want to personalize marketing."
@@ -707,9 +756,11 @@ GROUP BY
         ELSE 'Regular' 
     END;
 
-/*
-20. Repeat Customer Rate
+/* ---------------------------------------
+   Section 20: Repeat Customer Rate
+---------------------------------------- */
 
+/*
 Stakeholder: CRM Head - Customer Relationship Manager
 
 "We want to measure customer loyalty. Can you calculate the percentage
@@ -740,9 +791,3 @@ SELECT
         AS DECIMAL(10, 2)
     ) AS repeat_rate
 FROM cust_orders;
-
-
-
-
-
-
