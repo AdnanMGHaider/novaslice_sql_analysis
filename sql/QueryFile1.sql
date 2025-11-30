@@ -1,10 +1,44 @@
-/* 
+/*
 NovaSlice Pizza
-Analysis and reporting script
+SQL Analysis Script
 
-Note:
-Table definitions and constraints are in schemas/schema.sql
+Author: Adnan Haider
+Purpose: End to end SQL analysis of NovaSlice Pizza’s transactional dataset.
+
+This script contains all twenty analytical query sections aligned with the business 
+objectives and business questions defined in the project README.
+
+Schema definitions for all tables are stored separately in:
+schemas/schema.sql
+
+Do not run the full script at once.
+Run each section individually.
+
+---------------------------------------
+Section index
+---------------------------------------
+1. Orders Volume Analysis
+2. Total Revenue from Pizza Sales
+3. Highest Priced Pizza
+4. Most Common Pizza Size
+5. Top 5 Pizza Types by Units Sold
+6. Total Quantity by Category
+7. Orders by Hour
+8. Category Share of Units Sold
+9. Average Pizzas Per Day
+10. Top 3 Pizzas by Revenue
+11. Revenue Contribution per Pizza
+12. Cumulative Revenue Over Time
+13. Top 3 Pizzas per Category
+14. Top 10 Customers by Total Spend
+15. Orders by Weekday
+16. Average Order Size
+17. Seasonal Trends
+18. Revenue by Pizza Size
+19. Customer Segmentation
+20. Repeat Customer Rate
 */
+
 
 
 /*
@@ -706,6 +740,7 @@ SELECT
         AS DECIMAL(10, 2)
     ) AS repeat_rate
 FROM cust_orders;
+
 
 
 
