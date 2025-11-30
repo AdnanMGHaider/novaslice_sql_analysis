@@ -264,7 +264,7 @@ This repository is organized into the following folders:
 • sql/: main SQL analysis script  
 • screenshots/: images of query results and logo  
 • erd/: entity relationship diagram  
-• caveats/: optional file for storing notes on limitations
+• caveats/: data_quality_and_caveats.md with detailed assumptions and limitations
 
 Each file contributes to a complete, reproducible SQL analysis workflow.
 
