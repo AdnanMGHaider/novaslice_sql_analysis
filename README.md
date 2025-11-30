@@ -17,7 +17,21 @@ including relational modelling, window functions, aggregation techniques,
 time based analysis, customer segmentation, and structured project presentation.
 
 ## 2. Business Context
-[placeholder]
+
+NovaSlice Pizza operates a network of delivery focused outlets across multiple Indian cities.  
+Management wants to better understand order behaviour, revenue drivers, customer patterns,  
+and category level performance in order to support decisions related to menu strategy,  
+staffing, marketing, pricing, and supply chain planning.
+
+This analysis simulates a real internal analytics request where different stakeholders  
+Operations, Finance, Marketing, Product, Customer Insights, and the Board  
+ask specific questions about business performance.
+
+All twenty SQL queries in this project are aligned with real business needs  
+such as understanding order volume trends, identifying top selling pizzas,  
+measuring customer loyalty, quantifying revenue contribution,  
+and determining peak ordering periods.
+
 
 ## 3. Dataset Structure
 [placeholder]
