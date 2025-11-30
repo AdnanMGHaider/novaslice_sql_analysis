@@ -258,7 +258,19 @@ Each section corresponds to one business question.
 All expected outputs are available in the `screenshots/` folder for cross checking.
 
 ## 10. Caveats and Data Quality Notes
-[placeholder]
+
+## 10. Caveats and Data Quality Notes
+
+Although the dataset is clean and suitable for learning projects, several real world limitations apply:
+
+• The dataset represents a simplified model of restaurant ordering  
+• No missing values or inconsistent formats are present, which is uncommon in production databases  
+• Pricing is static and does not reflect dynamic discounts or promotions  
+• Customer table fields such as phone numbers and addresses are synthetic  
+• No geographic hierarchy (state → city) is enforced through reference tables  
+• Order status values are limited and may not represent a full delivery workflow
+
+These caveats are important to acknowledge when presenting the project to recruiters or hiring managers.
 
 ## 11. Project Files
 [placeholder]
