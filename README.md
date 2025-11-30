@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="screenshots/logo.png" width="230">
+</p>
+
 # NovaSlice Pizza SQL Analysis Project
 
 ## 1. Project Overview
@@ -191,7 +195,27 @@ The repeat customer rate indicated a measurable opportunity for improving retent
 These insights demonstrate how SQL analysis can directly support marketing, product, operations, and finance functions in a food ordering business.
 
 ## 8. Screenshots of Outputs
-[placeholder]
+
+All SQL query results for the twenty business questions have been captured as PNG files.  
+They are stored inside the `screenshots` folder in this repository.
+
+Each file name follows a clear naming convention that matches the section numbers in the SQL script  
+(for example: `section_1_1_total_unique_orders.png`, `section_5_top_5_pizza_types.png`, etc.)
+
+Below is a small preview of selected SQL query outputs.  
+All screenshots are available in the folder: `screenshots/`
+
+### Preview
+
+<p align="center">
+  <img src="screenshots/section01_1_1_total_unique_orders.png" width="300">
+  <img src="screenshots/section01_1_2_monthly_orders_trend.png" width="300">
+</p>
+
+<p align="center">
+  <img src="screenshots/section01_1_3_orders_by_weekday.png" width="300">
+  <img src="screenshots/section10_top3_pizzas_by_revenue.png" width="300">
+</p>
 
 ## 9. How to Run This Project
 [placeholder]
