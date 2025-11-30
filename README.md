@@ -22,8 +22,11 @@ This analysis simulates a real internal analytics request where different stakeh
 
 All twenty SQL queries in this project are aligned with real business needs such as understanding order volume trends, identifying top selling pizzas, measuring customer loyalty, quantifying revenue contribution, and determining peak ordering periods.
 
+## 3. Executive Summary
 
-## 3. Dataset Structure
+Across the full dataset NovaSlice processed several thousand orders and generated substantial revenue from pizza sales. Order activity peaks during weekend evenings, while weekday demand is steady around lunch and early dinner. Classic and Supreme categories drive most unit sales and revenue, with a small set of pizzas contributing a large share of performance. A minority of high value customers place multiple orders and account for a significant share of revenue. These patterns highlight opportunities for targeted promotions, capacity planning, and customer retention strategies.
+
+## 4. Dataset Structure
 
 The project uses five CSV files that represent the core transactional data for NovaSlice Pizza.  
 These files were imported into SQL Server and modelled into a clean relational structure.
@@ -47,7 +50,7 @@ Descriptive attributes such as pizza category and ingredients.
 
 The schema for these tables is defined in `schemas/schema.sql`.
 
-## 4. Entity Relationship Diagram
+## 5. Entity Relationship Diagram
 
 The NovaSlice database follows a clean relational structure with five core tables.  
 The ERD captures how customer information, orders, pizzas, and order line items interact.
@@ -92,7 +95,7 @@ The full ERD diagram is stored at:
 </p>
 
 
-## 5. Business Questions Answered
+## 6. Business Questions Answered
 
 This project answers a set of real business questions across operations, finance, marketing, product strategy, and customer analytics.  
 Each question maps to one or more SQL sections in `sql/sql_analysis.sql`.
@@ -131,7 +134,7 @@ Each question maps to one or more SQL sections in `sql/sql_analysis.sql`.
 
 These questions form the analytical backbone of the NovaSlice Pizza project and align with real world business needs for a food delivery or restaurant chain.
 
-## 6. SQL Approach
+## 7. SQL Approach
 
 The SQL workflow for NovaSlice follows a structured sequence that mirrors how an analyst would approach a real business data request.  
 All analysis is performed inside Microsoft SQL Server.
@@ -159,7 +162,7 @@ Selected outputs (such as revenue trends, customer behavior, and product perform
 
 This workflow mirrors the structure of real analytics projects where schema creation, cleaning, exploration, and insights follow a repeatable pipeline.
 
-## 7. Key Insights
+## 8. Key Insights
 
 This analysis highlights important trends across customer behavior, product performance, and financial outcomes. The insights below summarize what a business stakeholder would take away from the results of the queries.
 
@@ -185,7 +188,7 @@ The repeat customer rate indicated a measurable opportunity for improving retent
 
 These insights demonstrate how SQL analysis can directly support marketing, product, operations, and finance functions in a food ordering business.
 
-## 8. Recommendations for NovaSlice Pizza
+## 9. Recommendations for NovaSlice Pizza
 
 Based on the patterns observed in order behaviour, revenue distribution, product performance, and customer loyalty, the following actions would support operational and commercial improvements for NovaSlice.
 
@@ -209,7 +212,7 @@ Use weekend heavy ordering patterns to design timed offers or push notifications
 Align ingredient planning with high volume categories such as Classic and Supreme pizzas to reduce waste and avoid stockouts.
 
 
-## 9. Screenshots of Outputs
+## 10. Screenshots of Outputs
 
 All SQL query results for the twenty business questions have been captured as PNG files.  
 They are stored inside the `screenshots` folder in this repository.
@@ -232,7 +235,7 @@ All screenshots are available in the folder: `screenshots/`
   <img src="screenshots/section10_top3_pizzas_by_revenue.png" width="300">
 </p>
 
-## 10. How to Run This Project
+## 11. How to Run This Project
 
 To reproduce the full analysis on your own machine, follow the steps below.
 
@@ -266,7 +269,7 @@ Each section corresponds to one business question.
 ### 7. View Outputs
 All expected outputs are available in the `screenshots/` folder for cross checking.
 
-## 11. Caveats and Data Quality Notes
+## 12. Caveats and Data Quality Notes
 
 Although the dataset is clean and suitable for learning projects, several real world limitations apply:
 
@@ -279,7 +282,7 @@ Although the dataset is clean and suitable for learning projects, several real w
 
 These caveats are important to acknowledge when presenting the project to recruiters or hiring managers.
 
-## 12. Project Files
+## 13. Project Files
 
 This repository is organized into the following folders:
 
@@ -292,7 +295,7 @@ This repository is organized into the following folders:
 
 Each file contributes to a complete, reproducible SQL analysis workflow.
 
-## 13. About the Analyst
+## 14. About the Analyst
 
 This project was completed by Adnan Haider as part of a structured portfolio of analytics work.  
 The goal is to demonstrate strong SQL fundamentals, analytical thinking, and the ability to translate  
