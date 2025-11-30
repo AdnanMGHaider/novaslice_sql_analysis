@@ -284,4 +284,12 @@ This repository is organized into the following folders:
 Each file contributes to a complete, reproducible SQL analysis workflow.
 
 ## 12. About the Analyst
-[placeholder]
+
+This project was completed by Adnan Haider as part of a structured portfolio of analytics work.  
+The goal is to demonstrate strong SQL fundamentals, analytical thinking, and the ability to translate  
+raw data into business facing insights.
+
+Adnan specializes in SQL based analysis, Power BI dashboards, Python EDA, and end to end analytics projects.  
+
+LinkedIn: www.linkedin.com/in/adnan-haider-dev
+GitHub: [https://github.com/AdnanMGHaider](https://github.com/AdnanMGHaider)
