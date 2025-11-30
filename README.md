@@ -259,8 +259,6 @@ All expected outputs are available in the `screenshots/` folder for cross checki
 
 ## 10. Caveats and Data Quality Notes
 
-## 10. Caveats and Data Quality Notes
-
 Although the dataset is clean and suitable for learning projects, several real world limitations apply:
 
 • The dataset represents a simplified model of restaurant ordering  
@@ -273,7 +271,17 @@ Although the dataset is clean and suitable for learning projects, several real w
 These caveats are important to acknowledge when presenting the project to recruiters or hiring managers.
 
 ## 11. Project Files
-[placeholder]
+
+This repository is organized into the following folders:
+
+• data/ — raw CSV files  
+• schemas/ — database schema creation script  
+• sql/ — main SQL analysis script  
+• screenshots/ — images of query results and logo  
+• erd/ — entity relationship diagram  
+• caveats/ — optional file for storing notes on limitations
+
+Each file contributes to a complete, reproducible SQL analysis workflow.
 
 ## 12. About the Analyst
 [placeholder]
