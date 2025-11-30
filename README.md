@@ -59,7 +59,45 @@ The schema for these tables is defined in `schemas/schema.sql`.
 
 
 ## 4. Entity Relationship Diagram
-[placeholder]
+
+The NovaSlice database follows a clean relational structure with five core tables.  
+The ERD captures how customer information, orders, pizzas, and order line items interact.
+
+### Relationship Summary
+
+• One customer can place many orders  
+• One order can contain many order line items  
+• One pizza can appear in many order line items  
+• One pizza type can define many pizzas
+
+### Relationship Details
+
+**customers → orders**  
+One to many  
+Each customer may have multiple orders, but each order belongs to a single customer.  
+Key: customers.custid → orders.custid
+
+**orders → order_details**  
+One to many  
+Each order can contain multiple pizza line items.  
+Key: orders.order_id → order_details.order_id
+
+**pizzas → order_details**  
+One to many  
+Each pizza can appear across many orders.  
+Key: pizzas.pizza_id → order_details.pizza_id
+
+**pizza_types → pizzas**  
+One to many  
+A pizza type defines category and ingredients for multiple pizzas.  
+Key: pizza_types.pizza_type_id → pizzas.pizza_type_id
+
+### ERD File
+
+The full ERD diagram is stored in:
+
+`erd/erd.png`
+
 
 ## 5. Business Questions Answered
 [placeholder]
