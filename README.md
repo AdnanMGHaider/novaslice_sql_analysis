@@ -185,7 +185,31 @@ The repeat customer rate indicated a measurable opportunity for improving retent
 
 These insights demonstrate how SQL analysis can directly support marketing, product, operations, and finance functions in a food ordering business.
 
-## 8. Screenshots of Outputs
+## 8. Recommendations for NovaSlice Pizza
+
+Based on the patterns observed in order behaviour, revenue distribution, product performance, and customer loyalty, the following actions would support operational and commercial improvements for NovaSlice.
+
+### Operational planning
+Increase staffing during weekend evenings where order volume peaks.  
+Use weekday lunch and early evenings for training or lower capacity scheduling.
+
+### Menu and product strategy
+Prioritise the top performing pizzas and categories in marketing since a small number of pizzas drive a large share of revenue.  
+Review underperforming sizes such as XXL to determine whether they should remain on the menu.
+
+### Pricing and promotions
+Create targeted promotions for mid value customers to encourage a second or third order.  
+Introduce bundle offers or limited time deals for categories with moderate but stable demand.
+
+### Customer retention
+Introduce a simple loyalty program focused on high value and mid value customers since they generate a disproportionate share of total revenue.  
+Use weekend heavy ordering patterns to design timed offers or push notifications through the app.
+
+### Inventory and supply chain
+Align ingredient planning with high volume categories such as Classic and Supreme pizzas to reduce waste and avoid stockouts.
+
+
+## 9. Screenshots of Outputs
 
 All SQL query results for the twenty business questions have been captured as PNG files.  
 They are stored inside the `screenshots` folder in this repository.
@@ -208,7 +232,7 @@ All screenshots are available in the folder: `screenshots/`
   <img src="screenshots/section10_top3_pizzas_by_revenue.png" width="300">
 </p>
 
-## 9. How to Run This Project
+## 10. How to Run This Project
 
 To reproduce the full analysis on your own machine, follow the steps below.
 
@@ -242,7 +266,7 @@ Each section corresponds to one business question.
 ### 7. View Outputs
 All expected outputs are available in the `screenshots/` folder for cross checking.
 
-## 10. Caveats and Data Quality Notes
+## 11. Caveats and Data Quality Notes
 
 Although the dataset is clean and suitable for learning projects, several real world limitations apply:
 
@@ -255,7 +279,7 @@ Although the dataset is clean and suitable for learning projects, several real w
 
 These caveats are important to acknowledge when presenting the project to recruiters or hiring managers.
 
-## 11. Project Files
+## 12. Project Files
 
 This repository is organized into the following folders:
 
@@ -268,7 +292,7 @@ This repository is organized into the following folders:
 
 Each file contributes to a complete, reproducible SQL analysis workflow.
 
-## 12. About the Analyst
+## 13. About the Analyst
 
 This project was completed by Adnan Haider as part of a structured portfolio of analytics work.  
 The goal is to demonstrate strong SQL fundamentals, analytical thinking, and the ability to translate  
