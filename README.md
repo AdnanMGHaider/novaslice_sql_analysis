@@ -98,9 +98,6 @@ The full ERD diagram is stored in:
 
 `erd/erd.png`
 
-
-## 5. Business Questions Answered
-
 ## 5. Business Questions Answered
 
 This project answers twenty real business questions across operations, finance, marketing, product strategy, and customer analytics.  
@@ -140,7 +137,32 @@ Each question is mapped to a corresponding SQL section in `sql/sql_analysis.sql`
 These questions form the analytical backbone of the NovaSlice Pizza project and align with real world business needs for a food delivery or restaurant chain.
 
 ## 6. SQL Approach
-[placeholder]
+
+The SQL workflow for NovaSlice follows a structured sequence that mirrors how an analyst would approach a real business data request.  
+All analysis is performed inside Microsoft SQL Server.
+
+### Workflow Steps
+
+**1. Load schema and create tables**  
+Run the DDL script in `schemas/schema.sql` to create all five tables and enforce primary and foreign key constraints.
+
+**2. Import raw CSV data**  
+Load the CSV files located in the `data/` folder into their respective tables using SQL Server import tools.
+
+**3. Validate the data**  
+Check row counts, duplicates, null values, and datatype consistency to ensure the dataset is ready for analysis.
+
+**4. Execute analytical queries**  
+Run each section (1 to 20) from `sql/sql_analysis.sql` individually.  
+Each section corresponds to a business question and is fully documented inside the script.
+
+**5. Capture query outputs**  
+Screenshots of each query result set are saved in the `screenshots/` directory for transparency and reproducibility.
+
+**6. Reference results in reporting**  
+Selected outputs (such as revenue trends, customer behavior, and product performance) are summarized in the Insights section later in the README.
+
+This workflow mirrors the structure of real analytics projects where schema creation, cleaning, exploration, and insights follow a repeatable pipeline.
 
 ## 7. Key Insights
 [placeholder]
