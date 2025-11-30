@@ -166,8 +166,6 @@ This workflow mirrors the structure of real analytics projects where schema crea
 
 ## 7. Key Insights
 
-## 7. Key Insights
-
 This analysis highlights important trends across customer behavior, product performance, and financial outcomes. The insights below summarize what a business stakeholder would take away from the results of the queries.
 
 ### Operational Performance
@@ -191,7 +189,6 @@ High value customers were identifiable through total spend, enabling future loya
 The repeat customer rate indicated a measurable opportunity for improving retention and customer lifetime value.
 
 These insights demonstrate how SQL analysis can directly support marketing, product, operations, and finance functions in a food ordering business.
-
 
 ## 8. Screenshots of Outputs
 [placeholder]
